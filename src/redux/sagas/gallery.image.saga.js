@@ -3,7 +3,6 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* addImage(action) {
   try {
-    console.log(action.payload);
     // add s3 URL to DB
     yield axios.post('/api/gallery', action.payload);
     // get up to date data from DB
