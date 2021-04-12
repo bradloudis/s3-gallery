@@ -1,0 +1,9 @@
+.inner-drop {
+  text-align: center;
+  font-size: 16px;
+  color: #ef4e23;
+}
+
+.inner-drop:hover {
+  cursor: pointer;
+}

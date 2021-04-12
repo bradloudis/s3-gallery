@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './ImageUpload.css';
 
 // import s3 image uploader
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
+
+const dropStyles = {
+  width: '100px',
+  height: '60px',
+  border: '2px solid #EF4E23',
+  'border-radius': '10px',
+};
 
 class ImageUpload extends Component {
   handleFinishedUpload = (info) => {
@@ -24,12 +32,20 @@ class ImageUpload extends Component {
 
     const s3Url = 'https://kontomo-test.s3.amazonaws.com';
 
+    const innerDropElement = (
+      <div class="inner-drop">
+        <p>Click or Drop File Here!</p>
+      </div>
+    );
+
     return (
       <DropzoneS3Uploader
         onFinish={this.handleFinishedUpload}
         s3Url={s3Url}
         maxSize={1024 * 1024 * 5}
         upload={uploadOptions}
+        style={dropStyles}
+        children={innerDropElement}
       />
     );
   }
