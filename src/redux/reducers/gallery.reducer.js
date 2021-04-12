@@ -1,6 +1,6 @@
 const galleryReducer = (state = [], action) => {
   switch (action.type) {
-    case 'FETCH_GALLERY_IMAGES':
+    case 'SET_GALLERY':
       return action.payload;
     default:
       return state;
