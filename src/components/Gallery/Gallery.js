@@ -6,12 +6,18 @@ import './Gallery.css';
 import GalleryListItem from '../GalleryListItem/GalleryListItem';
 
 class Gallery extends Component {
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'FETCH_GALLERY_IMAGES',
+    });
+  }
+
   render() {
     return (
       <div className="gallery">
         {this.props.store.gallery &&
           this.props.store.gallery.map((item, index) => {
-            return <GalleryListItem galleryItem={item} />;
+            return <GalleryListItem galleryItem={item} key={index} />;
           })}
       </div>
     );
