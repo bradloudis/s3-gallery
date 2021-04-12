@@ -10,9 +10,30 @@ const dropStyles = {
   height: '60px',
   border: '2px solid #EF4E23',
   'border-radius': '10px',
+  transition: '0.3s',
+};
+
+const dropStylesHover = {
+  width: '100px',
+  height: '60px',
+  border: '2px solid #C3161C',
+  'border-radius': '10px',
+  transition: '0.3s',
 };
 
 class ImageUpload extends Component {
+  state = {
+    hover: false,
+  };
+
+  toggleState = () => {
+    if (this.state.hover) {
+      this.setState({ hover: false });
+    } else {
+      this.setState({ hover: true });
+    }
+  };
+
   handleFinishedUpload = (info) => {
     // console.log('File upload with filename', info.filename);
     // console.log('Access it on s3 at', info.fileUrl);
@@ -44,8 +65,10 @@ class ImageUpload extends Component {
         s3Url={s3Url}
         maxSize={1024 * 1024 * 5}
         upload={uploadOptions}
-        style={dropStyles}
+        style={this.state.hover ? dropStylesHover : dropStyles}
         children={innerDropElement}
+        onMouseEnter={this.toggleState}
+        onMouseLeave={this.toggleState}
       />
     );
   }
