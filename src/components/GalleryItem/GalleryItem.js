@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './GalleryItem.css';
 
-class GalleryListItem extends Component {
+class GalleryItem extends Component {
   render() {
     return <img src={this.props.galleryItem.image_path} alt="" />;
   }
 }
 
-export default GalleryListItem;
+export default GalleryItem;

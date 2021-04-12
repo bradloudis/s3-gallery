@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import './Gallery.css';
 
-import GalleryListItem from '../GalleryListItem/GalleryListItem';
+import GalleryItem from '../GalleryItem/GalleryItem';
 
 class Gallery extends Component {
   componentDidMount() {
@@ -17,7 +17,7 @@ class Gallery extends Component {
       <div className="gallery">
         {this.props.store.gallery &&
           this.props.store.gallery.map((item, index) => {
-            return <GalleryListItem galleryItem={item} key={index} />;
+            return <GalleryItem galleryItem={item} key={index} />;
           })}
       </div>
     );
