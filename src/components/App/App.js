@@ -2,6 +2,7 @@ import './App.css';
 
 // Components
 import ImageUpload from '../ImageUpload/ImageUpload';
+import Gallery from '../Gallery/Gallery';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         AWS S3 Gallery
         <ImageUpload />
       </header>
+      <Gallery />
     </div>
   );
 }
