@@ -12,7 +12,7 @@ class ImageUpload extends Component {
     // sending fileUrl (string) to be saved in User table
     this.props.dispatch({
       type: 'SET_IMAGE_URL',
-      payload: { link: info.fileUrl },
+      payload: { imagePath: info.fileUrl },
     });
   };
 
