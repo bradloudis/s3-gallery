@@ -46,10 +46,18 @@ class ImageUpload extends Component {
   };
 
   render() {
-    const uploadOptions = {
-      server: 'http://localhost:5000',
-      // signingUrlQueryParams: {uploadType: 'avatar'},
-    };
+    let uploadOptions;
+
+    if (process.env.DATABASE_URL) {
+      uploadOptions = {
+        server: process.env.DATABASE_URL,
+      };
+    } else {
+      uploadOptions = {
+        server: 'http://localhost:5000',
+        // signingUrlQueryParams: {uploadType: 'avatar'},
+      };
+    }
 
     const s3Url = 'https://kontomo-test.s3.amazonaws.com';
 
