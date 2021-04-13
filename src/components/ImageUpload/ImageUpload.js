@@ -52,6 +52,7 @@ class ImageUpload extends Component {
       uploadOptions = {
         server: process.env.DATABASE_URL,
       };
+      console.log('We got the if!');
     } else {
       uploadOptions = {
         server: 'http://localhost:5000',
