@@ -46,14 +46,10 @@ class ImageUpload extends Component {
   };
 
   render() {
-    let uploadOptions = {
-      server: 'http://localhost:5000',
+    const uploadOptions = {
+      server: 'https://s3-gallery.herokuapp.com',
+      // if developing locally set server: 'http://localhost:5000'
     };
-
-    // if deployed change the server url
-    if (process.env.DATABASE_URL) {
-      uploadOptions.server = 'https://s3-gallery.herokuapp.com';
-    }
 
     const s3Url = 'https://kontomo-test.s3.amazonaws.com';
 
